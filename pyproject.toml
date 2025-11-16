@@ -1,0 +1,8 @@
+[project]
+name = "dataorchestra"
+version = "0.0.1"
+description = "A toolkit for cleaning and preparing text datasets for LLM training and finetuning"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+]
