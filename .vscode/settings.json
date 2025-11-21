@@ -1,0 +1,6 @@
+{
+    "Codegeex.GenerationPreference": "line by line",
+    "Codegeex.Chat.LanguagePreference": "English",
+    "Codegeex.Comment.LanguagePreference": "English",
+    "Codegeex.CommitMessage.LanguagePreference": "English"
+}
