@@ -1,0 +1,12 @@
+[project]
+name = "dataorchestra"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+license = "Apache-2.0"
+dependencies = [
+    "asyncddgs>=0.1.0a1",
+    "asyncio>=4.0.0",
+    "urllib3>=2.5.0",
+]
