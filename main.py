@@ -1,5 +1,4 @@
 from typing import List
-
 from fastapi import FastAPI, status
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
@@ -9,6 +8,7 @@ from searchweb import search
 
 
 app = FastAPI()
+
 
 app.add_middleware(
     CORSMiddleware,
@@ -86,3 +86,33 @@ async def search_wikipedia(query: str, max_results: int):
         return JSONResponse(
             content={"error": str(e)}, status_code=status.HTTP_500_INTERNAL_SERVER_ERROR
         )
+
+
+@app.post("/books/{query}/{limits}", status_code=status.HTTP_200_OK)
+async def search_books(query: str, limits: int):
+    try:
+        raw_results = await searchBooks(f"filetype:pdf {query}", limits)
+        urls = []
+        for result in raw_results:
+            urls.append(result)
+        return JSONResponse(content=urls, status_code=status.HTTP_200_OK)
+    except Exception as e:
+        return JSONResponse(
+            content={"error": str(e)}, status_code=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
+
+
+
+@app.post("/news/{query}/{limits}", status_code=status.HTTP_200_OK)
+async def search_news(query: str, limits: int):
+    try:
+        raw_results = await searchNews(query, limits)
+        urls = []
+        for result in raw_results:
+            urls.append(result)
+        return JSONResponse(content=urls, status_code=status.HTTP_200_OK)
+    except Exception as e:
+        return JSONResponse(
+            content={"error": str(e)}, status_code=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
+
