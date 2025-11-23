@@ -59,6 +59,16 @@ To avoid getting rate limited:
 - Use proxies, VPNs, or Tor as a routing layer.
 - When invoking the API repeatedly, apply a **politeness delay** to avoid overloading upstream engines.
 
+# Installation guide
+
+```
+
+podman-compose up -d             #to start the service
+podman-compose logs -f           #to view logs
+podman-compose down              #to stop the service
+
+```
+
 # Disclaimer
 
 This project is intended for **educational use only**.

@@ -1,7 +1,7 @@
 [project]
 name = "searchweb"
 version = "0.1.0"
-description = "Add your description here"
+description = "A rest api for web search using meta search"
 readme = "README.md"
 requires-python = ">=3.13"
 license = "Apache-2.0"
@@ -70,3 +70,13 @@ dependencies = [
     "websockets==15.0.1",
     "yarl==1.22.0",
 ]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = ["searchweb", "main"]
+
+[tool.setuptools.package-dir]
+"" = "."
