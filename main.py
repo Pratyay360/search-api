@@ -38,10 +38,13 @@ async def result_search(query: str, limit: int):
         )
 
 @app.get("/search/engine", status_code=status.HTTP_200_OK)
-async def search_engine(query: str, limit: int, engine: Literal["bing", "brave", "duckduckgo", "google", "mojeek", "yandex", "yahoo", "wikipedia"]):
+async def search_engine(query: str, engine: str, limit: int):
     try:
-        results = await searchEngine(query, limit, engine)
-        return JSONResponse(content=results, status_code=status.HTTP_200_OK)
+        if engine in ["bing", "brave", "duckduckgo", "google", "mojeek", "yandex", "yahoo", "wikipedia"]:
+            results = await searchEngine(query, engine, limit)    
+            return JSONResponse(content=results, status_code=status.HTTP_200_OK)
+        else:
+            return JSONResponse(content={f"Invalid engine: {engine}  choose one from ['bing', 'brave', 'duckduckgo', 'google', 'mojeek', 'yandex', 'yahoo', 'wikipedia']"}, status_code=status.HTTP_200_OK)
     except Exception as e:
         return JSONResponse(
             content={"error": str(e)}, status_code=status.HTTP_400_BAD_REQUEST

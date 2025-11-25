@@ -1,17 +1,9 @@
 services:
   api:
-    build: .
-    container_name: search-api 
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: search-api
     ports:
       - "8000:8000"
-    environment:
-      PYTHONUNBUFFERED: "1"
-      UV_HTTP_TIMEOUT: "120"
     restart: unless-stopped
-    command: ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
-    healthcheck:
-      test: ["CMD", "python", "-c", "import requests; requests.get('http://localhost:8000/')"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-      start_period: 30s

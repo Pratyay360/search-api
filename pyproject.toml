@@ -5,7 +5,6 @@ description = "A rest api for web search using meta search"
 readme = "README.md"
 requires-python = ">=3.13"
 license = "Apache-2.0"
-
 dependencies = [
     "aiohappyeyeballs==2.6.1",
     "aiohttp==3.13.2",
@@ -20,6 +19,8 @@ dependencies = [
     "certifi==2025.11.12",
     "charset-normalizer==3.4.4",
     "click==8.3.1",
+    "crossref>=0.1.2",
+    "crossrefapi>=1.7.0",
     "ddgs==9.9.1",
     "dnspython==2.8.0",
     "email-validator==2.3.0",
