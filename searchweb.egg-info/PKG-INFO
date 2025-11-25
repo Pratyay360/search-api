@@ -15,6 +15,7 @@ Requires-Dist: anyio==4.11.0
 Requires-Dist: asyncddgs==0.1.0a1
 Requires-Dist: asyncio==4.0.0
 Requires-Dist: attrs==25.4.0
+Requires-Dist: backoff>=2.2.1
 Requires-Dist: brotli==1.2.0
 Requires-Dist: certifi==2025.11.12
 Requires-Dist: charset-normalizer==3.4.4
