@@ -4,3 +4,5 @@ __*__
 !.github
 !.dockerignore
 .venv
+!.docker*
+*egg-info
