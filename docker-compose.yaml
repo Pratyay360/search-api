@@ -3,7 +3,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: search-api
+    container_name: searchapi
     ports:
       - "8000:8000"
     restart: unless-stopped
