@@ -1,5 +1,8 @@
 [project]
 name = "searchweb"
+=======
+name = "search-api"
+>>>>>>> Stashed changes
 version = "0.1.0"
 description = "A rest api for web search using meta search"
 readme = "README.md"
